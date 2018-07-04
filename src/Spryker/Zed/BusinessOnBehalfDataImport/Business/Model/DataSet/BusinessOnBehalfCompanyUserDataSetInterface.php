@@ -14,4 +14,5 @@ interface BusinessOnBehalfCompanyUserDataSetInterface
     public const COLUMN_ID_BUSINESS_UNIT = 'idBusinessUnit';
     public const COLUMN_ID_COMPANY = 'idCompany';
     public const COLUMN_ID_CUSTOMER = 'idCustomer';
+    public const COLUMN_DEFAULT = 'default';
 }
