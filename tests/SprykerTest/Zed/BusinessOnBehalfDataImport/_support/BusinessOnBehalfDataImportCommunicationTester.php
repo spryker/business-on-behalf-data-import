@@ -28,17 +28,11 @@ class BusinessOnBehalfDataImportCommunicationTester extends Actor
 {
     use _generated\BusinessOnBehalfDataImportCommunicationTesterActions;
 
-    /**
-     * @return void
-     */
     public function ensureCompanyUserDatabaseTableIsEmpty(): void
     {
         $this->ensureDatabaseTableIsEmpty($this->getCompanyUserQuery());
     }
 
-    /**
-     * @return \Orm\Zed\CompanyUser\Persistence\SpyCompanyUserQuery
-     */
     protected function getCompanyUserQuery(): SpyCompanyUserQuery
     {
         return SpyCompanyUserQuery::create();

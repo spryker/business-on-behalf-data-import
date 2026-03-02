@@ -28,9 +28,6 @@ class BusinessOnBehalfDataImportHelper extends Module
      */
     protected const CUSTOMER_REFERENCE = 'TEST--1';
 
-    /**
-     * @return void
-     */
     public function prepareTestData(): void
     {
         $this->createTestCustomer();
@@ -75,18 +72,12 @@ class BusinessOnBehalfDataImportHelper extends Module
         $query->deleteAll();
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableContainsData(): void
     {
         $companyUserQuery = $this->getCompanyUserQuery();
         $this->assertTrue(($companyUserQuery->count() > 0), 'Expected at least one entry in the database table but database table is empty.');
     }
 
-    /**
-     * @return void
-     */
     public function assertDatabaseTableContainsCorrectData(): void
     {
         $companyUserQuery = $this->getCompanyUserQuery();
@@ -96,25 +87,16 @@ class BusinessOnBehalfDataImportHelper extends Module
         $this->assertTrue(($companyUserQuery->count() > 0), 'Expected entry in the database table with correct data but no one found.');
     }
 
-    /**
-     * @return \Orm\Zed\CompanyUser\Persistence\SpyCompanyUserQuery
-     */
     protected function getCompanyUserQuery(): SpyCompanyUserQuery
     {
         return SpyCompanyUserQuery::create();
     }
 
-    /**
-     * @return \Orm\Zed\Customer\Persistence\SpyCustomerQuery
-     */
     protected function getCustomerQuery(): SpyCustomerQuery
     {
         return SpyCustomerQuery::create();
     }
 
-    /**
-     * @return \Generated\Shared\Transfer\CustomerTransfer
-     */
     protected function createTestCustomer(): CustomerTransfer
     {
         $customerTransfer = (new CustomerBuilder([
@@ -135,19 +117,11 @@ class BusinessOnBehalfDataImportHelper extends Module
         return $customerTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\CustomerTransfer $customerTransfer
-     *
-     * @return void
-     */
     protected function cleanupCustomer(CustomerTransfer $customerTransfer): void
     {
         $this->getCustomerFacade()->deleteCustomer($customerTransfer);
     }
 
-    /**
-     * @return \Spryker\Zed\Customer\Business\CustomerFacadeInterface
-     */
     protected function getCustomerFacade(): CustomerFacadeInterface
     {
         return $this->getLocator()->customer()->facade();

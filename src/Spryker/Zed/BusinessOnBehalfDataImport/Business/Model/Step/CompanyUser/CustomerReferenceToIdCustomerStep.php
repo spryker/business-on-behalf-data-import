@@ -21,11 +21,6 @@ class CustomerReferenceToIdCustomerStep implements DataImportStepInterface
      */
     protected $idCustomerBuffer = [];
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $customerReference = $dataSet[BusinessOnBehalfCompanyUserDataSetInterface::COLUMN_CUSTOMER_REFERENCE];

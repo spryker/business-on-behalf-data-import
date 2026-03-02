@@ -46,33 +46,21 @@ class BusinessOnBehalfDataImportBusinessFactory extends DataImportBusinessFactor
         return $dataImporter;
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCompanyUserWriterStep(): DataImportStepInterface
     {
         return new CompanyUserWriterStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCompanyKeyToIdCompanyStep(): DataImportStepInterface
     {
         return new CompanyKeyToIdCompanyStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createBusinessUnitKeyToIdCompanyBusinessUnitStep(): DataImportStepInterface
     {
         return new BusinessUnitKeyToIdCompanyBusinessUnitStep();
     }
 
-    /**
-     * @return \Spryker\Zed\DataImport\Business\Model\DataImportStep\DataImportStepInterface
-     */
     public function createCustomerReferenceToIdCustomerStep(): DataImportStepInterface
     {
         return new CustomerReferenceToIdCustomerStep();

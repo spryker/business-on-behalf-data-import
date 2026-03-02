@@ -46,18 +46,12 @@ class BusinessOnBehalfCompanyUserDataImportPluginTest extends Unit
      */
     protected $tester;
 
-    /**
-     * @return void
-     */
     protected function setUp(): void
     {
         parent::setUp();
         $this->prepareTestData();
     }
 
-    /**
-     * @return void
-     */
     public function testImportImportsData(): void
     {
         $this->tester->ensureCompanyUserDatabaseTableIsEmpty();
@@ -77,18 +71,12 @@ class BusinessOnBehalfCompanyUserDataImportPluginTest extends Unit
         $this->tester->assertDatabaseTableContainsCorrectData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetImportTypeReturnsTypeOfImporter(): void
     {
         $businessOnBehalfCompanyUserDataImportPlugin = new BusinessOnBehalfCompanyUserDataImportPlugin();
         $this->assertSame(BusinessOnBehalfDataImportConfig::IMPORT_TYPE_COMPANY_USER, $businessOnBehalfCompanyUserDataImportPlugin->getImportType());
     }
 
-    /**
-     * @return void
-     */
     protected function prepareTestData(): void
     {
         $this->tester->prepareTestData();

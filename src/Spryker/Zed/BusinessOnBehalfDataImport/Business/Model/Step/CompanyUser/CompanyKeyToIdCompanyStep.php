@@ -21,11 +21,6 @@ class CompanyKeyToIdCompanyStep implements DataImportStepInterface
      */
     protected $idCompanyBuffer = [];
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $companyKey = $dataSet[BusinessOnBehalfCompanyUserDataSetInterface::COLUMN_COMPANY_KEY];

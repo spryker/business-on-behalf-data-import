@@ -21,11 +21,6 @@ class BusinessUnitKeyToIdCompanyBusinessUnitStep implements DataImportStepInterf
      */
     protected $idBusinessUnitBuffer = [];
 
-    /**
-     * @param \Spryker\Zed\DataImport\Business\Model\DataSet\DataSetInterface $dataSet
-     *
-     * @return void
-     */
     public function execute(DataSetInterface $dataSet): void
     {
         $businessUnitKey = $dataSet[BusinessOnBehalfCompanyUserDataSetInterface::COLUMN_BUSINESS_UNIT_KEY];
