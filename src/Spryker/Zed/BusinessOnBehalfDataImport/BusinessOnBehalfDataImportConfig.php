@@ -13,6 +13,8 @@ use Spryker\Zed\DataImport\DataImportConfig;
 class BusinessOnBehalfDataImportConfig extends DataImportConfig
 {
     /**
+     * @api
+     *
      * @var string
      */
     public const IMPORT_TYPE_COMPANY_USER = 'company-user-on-behalf';
